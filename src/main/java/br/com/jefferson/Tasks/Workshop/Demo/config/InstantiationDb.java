@@ -22,9 +22,9 @@ public class InstantiationDb implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         clearDb();
-        Task task1= new Task(null,"Fazer a atividade de LP1", LocalDate.of(2026,03,26));
-        Task task2 = new Task(null,"Fazer a atividade de LP2", LocalDate.of(2026,03,26));
-        Task task3 = new Task(null,"Fazer a atividade de LP3", LocalDate.of(2026,03,26));
+        Task task1= new Task(null,"Fazer a 5ª atividade de LP", LocalDate.of(2025,10,02));
+        Task task2 = new Task(null,"Fazer o projeto da unidade 3 de LP", LocalDate.of(2025,10,03));
+        Task task3 = new Task(null,"Lavar a louça", LocalDate.of(2025,10,02));
         taskRepository.saveAll(Arrays.asList(task1,task2,task3));
     }
 
