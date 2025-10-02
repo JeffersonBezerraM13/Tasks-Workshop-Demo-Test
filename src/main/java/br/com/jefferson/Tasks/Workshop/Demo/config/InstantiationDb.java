@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -21,9 +22,9 @@ public class InstantiationDb implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         clearDb();
-        Task task1= new Task(null,"Fazer a atividade de LP1", new Date(26032026));
-        Task task2 = new Task(null,"Fazer a atividade de LP2", new Date(27032026));
-        Task task3 = new Task(null,"Fazer a atividade de LP3", new Date(28032026));
+        Task task1= new Task(null,"Fazer a atividade de LP1", LocalDate.of(2026,03,26));
+        Task task2 = new Task(null,"Fazer a atividade de LP2", LocalDate.of(2026,03,26));
+        Task task3 = new Task(null,"Fazer a atividade de LP3", LocalDate.of(2026,03,26));
         taskRepository.saveAll(Arrays.asList(task1,task2,task3));
     }
 

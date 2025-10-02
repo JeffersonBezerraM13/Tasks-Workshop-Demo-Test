@@ -1,12 +1,13 @@
 package br.com.jefferson.Tasks.Workshop.Demo.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import br.com.jefferson.Tasks.Workshop.Demo.domain.dto.TaskDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -18,10 +19,10 @@ public class Task {
     private Long id;
     private String name;
 
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-    private Date date;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private LocalDate date;
 
-    public Task(Long id, String name, Date date) {
+    public Task(Long id, String name, LocalDate date) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -51,11 +52,11 @@ public class Task {
         this.name = name;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
